@@ -1,4 +1,4 @@
-type StudentType = {
+export type StudentType = {
     id: number
     name: string
     age: number
@@ -19,7 +19,7 @@ type TechnologiesType = {
     title: string
 }
 
-const student = {
+export const student = {
     name: 'Valera',
     age: 20,
     isActive: false,
