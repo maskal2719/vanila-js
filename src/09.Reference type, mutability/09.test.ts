@@ -4,11 +4,9 @@ export type Users = {
     age: number
     address: {title: string}
 }
-
 function ageInc(user: Users) {
     user.age++
 }
-
 test('reference type test', () => {
 
 
@@ -29,7 +27,6 @@ test('reference type test', () => {
 
     expect(user.age).toBe(1000)
 })
-
 test('arr test', () => {
 
 
@@ -52,7 +49,6 @@ test('arr test', () => {
 
     expect(users[2]).toEqual({name:'allo', age: 512})
 })
-
 test('value type test', () => {
 
 
@@ -65,8 +61,6 @@ test('value type test', () => {
     expect(adminsCount).toBe(51)
     expect(usersCount).toBe(100)
 })
-
-
 test('33312 test', () => {
 
 
@@ -86,4 +80,33 @@ test('33312 test', () => {
     }
 
     expect(user.age).toBe(1000)
+})
+test('array test',() => {
+
+    const address = {
+        title: 'Gomel'
+    }
+
+    let user: Users = {
+        name: 'Stas',
+        age: 25,
+        address : {
+            title: 'Gomel'
+        }
+    }
+
+    let user2 : Users = {
+        name: 'tae',
+        age:42,
+        address: user.address
+    }
+
+
+    const users= [user, user2, {name: "katy", age: 10, address: address}]
+
+    const admins = [user, user2]
+
+    admins[0].name = 'Dmitry'
+
+    expect(users[0].name).toBe('Dmitry')
 })
